@@ -1,0 +1,27 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "npm run clean && npm run build && aws lambda update-function-code --function-name noticeFunction --zip-file fileb://build.zip --publish",
+    "clean": "rm build.zip",
+    "build": "zip -r build.zip node_modules index.js app.js routes.js",
+    "start": "node app-local",
+    "create-database": "aws dynamodb create-table --cli-input-json file://notice-table-model.json"
+  },
+  "keywords": [],
+  "author": "delo",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.556.0",
+    "aws-serverless-express": "^3.3.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "global": "^4.4.0",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.27",
+    "nodemon": "^2.0.2",
+    "uuid": "^3.3.3"
+  }
+}

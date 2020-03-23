@@ -1,0 +1,27 @@
+{
+    "TableName": "notice",
+    "KeySchema": [
+      {
+        "AttributeName": "noticeTitle",
+        "KeyType": "HASH"
+      },
+      {
+        "AttributeName": "dateReleased",
+        "KeyType": "RANGE"
+      }
+    ],
+    "AttributeDefinitions": [
+      {
+        "AttributeName": "noticeTitle",
+        "AttributeType": "S"
+      },
+      {
+        "AttributeName": "dateReleased",
+        "AttributeType": "S"
+      }
+    ],
+    "ProvisionedThroughput": {
+      "ReadCapacityUnits": 5,
+      "WriteCapacityUnits": 5
+    }
+}
