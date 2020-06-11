@@ -7,17 +7,13 @@
 </template>
 
 <script>
-  export default {
-    
-  }
+export default {};
 </script>
 <style>
-.main{
+/* .main{
     background: url('~@/assets/bg.jpg') repeat;
-    
-    /* background-size: cover; */
-}
-.card{
-  background: url('~@/assets/exclusive_paper.png') repeat;
+} */
+.card {
+  background: url("~@/assets/exclusive_paper.png") repeat;
 }
 </style>
